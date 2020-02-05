@@ -92,3 +92,9 @@ variable "alb_arn" {
   description = "The ARN of the ALB (used to ensure the ALB exists before the target group is associated with the service, since otherwise it fails)."
   default     = ""
 }
+
+variable "health_check_grace_period_seconds" {
+  description = "Seconds to ignore failing load balancer health checks on newly instantiated tasks to prevent premature shutdown."
+  type        = "string"
+  default     = "0"
+}

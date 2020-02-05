@@ -4,6 +4,7 @@ resource "aws_ecs_service" "service" {
   task_definition = "${var.task_definition}"
   desired_count   = "${var.desired_count}"
   iam_role        = "${aws_iam_role.role.arn}"
+  health_check_grace_period_seconds = "${var.health_check_grace_period_seconds}"
 
   load_balancer {
     target_group_arn = "${aws_alb_target_group.target_group.arn}"
